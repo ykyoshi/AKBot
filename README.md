@@ -13,9 +13,9 @@ Download the project.
 - a valid auth.json file.
 
 ## Usage
-The default command prefix is '!'.
-Use '!help' to get help regarding commands.
-Use '!search {nickname|last name [first name]}' to search for a member.
+The default command prefix is '!'.  
+Use '!help' to get help regarding commands.  
+Use '!search {nickname|last name [first name]}' to search for a member.  
 If search query contains multiple results, AKBot will number them and add emojis that so users can select the correct result.
 ### Example
 '!search jurina' will return Matsui Jurina. '!search matsui jurina' will return Matsui Jurina. '!search Yokochan' will return Team 8's Yokoyama Yui. '!search Yokoyama Yui' will return a numbered list where 1️⃣ is Team A's Yokoyama Yui and 2️⃣ is Team 8's Yokoyama Yui, selecting the 1️⃣ or 2️⃣ emoji will return the correct result.
