@@ -8,31 +8,31 @@ module.exports = {
 		let sqlCount;
 		let sqlSelect;
 		// Database variables.
-		var rid = '';			// Members table id.
-		var rkanji = '';		// Name in kanji.
-		var rlastname = '';		// Last name.
+		var rid = '';		// Members table id.
+		var rkanji = '';	// Name in kanji.
+		var rlastname = '';	// Last name.
 		var rfirstname = '';	// First name.
-		var rnick = '';			// Nickname (not displayed, only used for queries).
-		var rbdate = '';		// Birthdate.
-		var rbplace = '';		// Birthplace (unused).
-		var rteam1 = '';		// Team 1.
-		var rteam2 = '';		// Team 2 (may be null).
-		var rdebuted = '';		// Debut date.
-		var rgen = '';			// Generation.
-		var rsnsid = '';		// SNS table id.
-		var rtwitter = '';		// Twitter handle.
-		var rig = '';			// Instagram handle.
-		var rgogo = '';			// 7gogo handle.
-		var rsr = '';			// Showroom handle.
+		var rnick = '';		// Nickname (not displayed, only used for queries).
+		var rbdate = '';	// Birthdate.
+		var rbplace = '';	// Birthplace (unused).
+		var rteam1 = '';	// Team 1.
+		var rteam2 = '';	// Team 2 (may be null).
+		var rdebuted = '';	// Debut date.
+		var rgen = '';		// Generation.
+		var rsnsid = '';	// SNS table id.
+		var rtwitter = '';	// Twitter handle.
+		var rig = '';		// Instagram handle.
+		var rgogo = '';		// 7gogo handle.
+		var rsr = '';		// Showroom handle.
 		// Programmatically set variables.
-		var date1;				// Current date (for age).
-		var date2;				// Birthdate (for age).
-		var age = '';			// Age (current date - birthdate).
-		var rgroup1 = '';		// Team 1 group.
-		var rgroup2 = '';		// Team 2 group (may be null).
-		var rcolor = '';		// Embed color.
+		var date1;		// Current date (for age).
+		var date2;		// Birthdate (for age).
+		var age = '';		// Age (current date - birthdate).
+		var rgroup1 = '';	// Team 1 group.
+		var rgroup2 = '';	// Team 2 group (may be null).
+		var rcolor = '';	// Embed color.
 		var ykyspecial = '';	// Special variable for disambiguation.
-		var result = 0;			// Number of results.
+		var result = 0;		// Number of results.
 
 		// Search for nickname, last name or first name if there's only one argument.
 		if (args[1] == null) {
@@ -85,13 +85,13 @@ module.exports = {
 					});
 				
 					// Set variables.
-					rgogo = rlastname+"-"+rfirstname;		// 7gogo URL is '<lastname>-<firstname>'.
+					rgogo = rlastname+"-"+rfirstname;	// 7gogo URL is '<lastname>-<firstname>'.
 					rsr = "48_"+rfirstname+"_"+rlastname;	// SR URL is '48_<firstname>_<lastname>'.
-					rsr = rsr.toUpperCase();				// SR URL is uppercase.
-					date1 = new Date();						// Current date.
-					date2 = new Date(rbdate);				// Convert birthdate into Date type.
+					rsr = rsr.toUpperCase();		// SR URL is uppercase.
+					date1 = new Date();			// Current date.
+					date2 = new Date(rbdate);		// Convert birthdate into Date type.
 					age = Math.floor((date1-date2)/3.15e10);
-					ykyspecial = '';						// Special disambiguation variable for Yokoyama Yui.
+					ykyspecial = '';			// Special disambiguation variable for Yokoyama Yui.
 
 					// Team 8 members aren't part of any gen.
 					// TODO: set in db.
@@ -144,12 +144,12 @@ module.exports = {
 
 			// Return a message asking for user to filter results if there are more than one.
 			else if (result > 1){
-				var msgconc = "";		// Concatenated string of individual results.
-				var emojcpt = 1;		// Used to set the number emoji (number emoji is <number>+'️⃣'.
-				var emojlist = [];		// Array of emojis.
-				var emojlist2 = [];		// Array of emojlist indexes (1st emoji index is 0, 2nd is 3, 3rd is 6, ...)
+				var msgconc = "";	// Concatenated string of individual results.
+				var emojcpt = 1;	// Used to set the number emoji (number emoji is <number>+'️⃣'.
+				var emojlist = [];	// Array of emojis.
+				var emojlist2 = [];	// Array of emojlist indexes (1st emoji index is 0, 2nd is 3, 3rd is 6, ...)
 				var emojlist2cpt = 0;	// Count number of emojis.
-				var msgconccpt = 1;		// Adds numbers to list of multiple results.
+				var msgconccpt = 1;	// Adds numbers to list of multiple results.
 				var is_deleted = false;	// Check if message was deleted by reactions.
 				
 				// Database query.
