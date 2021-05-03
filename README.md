@@ -20,5 +20,10 @@ If search query contains multiple results, AKBot will number them and add emojis
 ### Example
 '!search jurina' will return Matsui Jurina. '!search matsui jurina' will return Matsui Jurina. '!search Yokochan' will return Team 8's Yokoyama Yui. '!search Yokoyama Yui' will return a numbered list where 1️⃣ is Team A's Yokoyama Yui and 2️⃣ is Team 8's Yokoyama Yui, selecting the 1️⃣ or 2️⃣ emoji will return the correct result.
 
+
+https://user-images.githubusercontent.com/22215889/116896978-0dd15980-ac35-11eb-93bd-b42ee8f130f0.mp4
+
+
+
 ## Author
 **yky** - https://github.com/ykyoshi
