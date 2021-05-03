@@ -8,9 +8,9 @@
 */
 
 // Variables
-const fs = require ('fs');				// File system module.
+const fs = require ('fs');		// File system module.
 const Discord = require('discord.js');	// discord.js module.
-const bot = new Discord.Client();		// Create new Discord bot.
+const bot = new Discord.Client();	// Create new Discord bot.
 const {prefix, token} = require('./auth.json');
 
 // Collection of commands from 'commands' directory.
